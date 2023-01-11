@@ -53,7 +53,6 @@ const fetchShop = async () => {
         const pintarCarrito = () => {
             modal.innerHTML = "";
             modal.style.display = "flex";
-            carritoVacio ();
             
             const modalHeader = document.createElement ("div");
             modalHeader.className = "modal-header";
@@ -69,12 +68,25 @@ const fetchShop = async () => {
                 modal.style.display = "none";        
             });
             
-            if (!carrito.length){
+            const modalVaciarCarrito = document.createElement ("h3");
+            modalVaciarCarrito.className = "modal-vaciar-carrito";
+            modalVaciarCarrito.innerText = "(Vaciar Carrito)";
+            modal.append (modalVaciarCarrito);
+
+            if (carrito.length === 0){
                 const modalCarritoVacio = document.createElement ("h3");
                 modalCarritoVacio.className = "modal-carrito-vacio";
                 modalCarritoVacio.innerText = "Carrito Vacio";
                 modal.append (modalCarritoVacio);                
-            };
+                modalVaciarCarrito.style.display = "none";
+            };            
+            
+            modalVaciarCarrito.addEventListener ("click", () => {
+                carrito = [];
+                guardarLocal ();
+                contadorCarrito ();
+                pintarCarrito ();
+            });
             
             carrito.forEach ((producto) => {
                 let contenidoCarrito = document.createElement ("div");
@@ -87,12 +99,12 @@ const fetchShop = async () => {
                 <span class = "borrar-producto">X</span>
                 `;
                 modal.append (contenidoCarrito);
-                    
-                    let eliminar = contenidoCarrito.querySelector (".borrar-producto");
-                    
-                    eliminar.addEventListener ("click", () => {
-                        eliminarProducto (producto.id);
-                    });
+                
+                let eliminar = contenidoCarrito.querySelector (".borrar-producto");
+                
+                eliminar.addEventListener ("click", () => {
+                    eliminarProducto (producto.id);
+                });
             });    
             
             const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
