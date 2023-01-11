@@ -22,12 +22,12 @@ const fetchShop = async () => {
             `;
             shopContent.append (content);
             
-            let comprar = document.createElement ("button");
-            comprar.className = "comprar";
-            comprar.innerText = "comprar";
-            content.append (comprar);
+            let agregar = document.createElement ("button");
+            agregar.className = "agregar";
+            agregar.innerText = "agregar";
+            content.append (agregar);
             
-            comprar.addEventListener ("click", () => {
+            agregar.addEventListener ("click", () => {
                 const repetido = carrito.some ((productoRepetido) => productoRepetido.id === producto.id);
                 if (repetido){
                     carrito.map ((prod) => {
@@ -112,6 +112,12 @@ const fetchShop = async () => {
             totalCompra.className = "total-content";
             totalCompra.innerHTML = `Total a pagar: $ ${total}`;
             modal.append (totalCompra);
+
+            const comprar = document.createElement ("button");
+            comprar.className = "comprar";
+            comprar.innerText = "comprar";
+            modal.append (comprar);
+            
         };
         
         verCarrito.addEventListener (("click"), pintarCarrito);
