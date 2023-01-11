@@ -1,0 +1,8 @@
+[
+    {"id": 1, "nombre": "Supreme Plus", "precio": 50, "img": "./Imagenes/supremePlus.webp", "cantidad": 1},
+    {"id": 2, "nombre": "Revitalift", "precio": 100, "img": "./Imagenes/cremaRevitalift.webp", "cantidad": 1},
+    {"id": 3, "nombre": "Garnier", "precio": 150, "img": "./Imagenes/garnier.webp", "cantidad": 1},
+    {"id": 4, "nombre": "Agnes", "precio": 200, "img": "./Imagenes/agnes.jpg", "cantidad": 1},
+    {"id": 5, "nombre": "Antiarrugas", "precio": 250, "img": "./Imagenes/cremaAntiarrugas.webp", "cantidad": 1},
+    {"id": 6, "nombre": "Vichy", "precio": 300, "img": "./Imagenes/vichy.jpg", "cantidad": 1}
+]
