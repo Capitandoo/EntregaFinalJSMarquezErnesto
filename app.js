@@ -53,6 +53,7 @@ const fetchShop = async () => {
         const pintarCarrito = () => {
             modal.innerHTML = "";
             modal.style.display = "flex";
+            carritoVacio ();
             
             const modalHeader = document.createElement ("div");
             modalHeader.className = "modal-header";
@@ -68,10 +69,12 @@ const fetchShop = async () => {
                 modal.style.display = "none";        
             });
             
-            const modalVaciarCarrito = document.createElement ("h3");
-            modalVaciarCarrito.className = "modal-content-vaciar";
-            modalVaciarCarrito.innerText = "@";
-            modal.append (modalVaciarCarrito);
+            if (!carrito.length){
+                const modalCarritoVacio = document.createElement ("h3");
+                modalCarritoVacio.className = "modal-carrito-vacio";
+                modalCarritoVacio.innerText = "Carrito Vacio";
+                modal.append (modalCarritoVacio);                
+            };
             
             carrito.forEach ((producto) => {
                 let contenidoCarrito = document.createElement ("div");
@@ -80,10 +83,10 @@ const fetchShop = async () => {
                 <img src = "${producto.img}">
                 <h3>${producto.nombre} </h3>
                 <p>$ ${Number (producto.precio)} </p>
-                    <p>Cantidad: ${producto.cantidad}</p>
-                    <span class = "borrar-producto">X</span>
-                    `;
-                    modal.append (contenidoCarrito);
+                <p>Cantidad: ${producto.cantidad}</p>
+                <span class = "borrar-producto">X</span>
+                `;
+                modal.append (contenidoCarrito);
                     
                     let eliminar = contenidoCarrito.querySelector (".borrar-producto");
                     
