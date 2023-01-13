@@ -49,9 +49,9 @@ const fetchShop = async () => {
                 Toastify({
                     text: "Agregaste un producto al carrito",
                     duration: 3000,
-                    destination: "https://github.com/apvarun/toastify-js",
+                    destination: "",
                     newWindow: true,
-                    close: true,
+                    close: false,
                     gravity: "top", // `top` or `bottom`
                     position: "left", // `left`, `center` or `right`
                     stopOnFocus: true, // Prevents dismissing of toast on hover
@@ -113,7 +113,7 @@ const fetchShop = async () => {
                 <h3>${producto.nombre} </h3>
                 <p>$ ${Number (producto.precio)} </p>
                 <p>Cantidad: ${producto.cantidad}</p>
-                <span class = "borrar-producto">X</span>
+                <img class = "borrar-producto" src = "./Imagenes/icon-delete.svg">
                 `;
                 modal.append (contenidoCarrito);
                 

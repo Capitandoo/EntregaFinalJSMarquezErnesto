@@ -92,6 +92,7 @@
 }
 .borrar-producto {
   cursor: pointer;
+  transform: scale(.2);
 }
 .modal-content-vaciar {
   cursor: pointer;
