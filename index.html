@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ecommerce</title>
     <link rel="stylesheet" href="./Css/estilos.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+  </head>
 <body>
     <div class="">
         <div class="">
-            <div class="notificacionCarrito">
+          <div class="notificacionCarrito">
                 0
             </div>
             <img class="verCarrito" src="./Imagenes/icon-cart.svg" alt="Carrito">                
@@ -18,7 +22,34 @@
     </div>
     <div id="shopContent" class="shop-content"></div>
     <div id="modal-container" class="modal-container"></div>
+    <div id="modal-contacto" class="modal-contacto">
+      <div class="modal-contacto-titulo">
+        <h2>Registrate para terminar la compra</h2>
+      </div>
+      <form id="formulario" action="/redireccion">
+        
+        <div class="modal-etiqueta">
+          <label for="formGroupExampleInput" class="form-label"
+          >Nombre y Apellido</label>
+          <input type="text" class="form-control" id="nombre" required/>
+        </div>
+        <div class="modal-etiqueta">
+          <label for="formGroupExampleInput2" class="form-label"
+          >Correo Electrónico</label>
+          <input type="text" class="form-control" id="correo" required/>
+        </div>
+        <button type="submit" class="btn-enviar">
+          Enviar información
+        </button>
+      </div>
+      </form>
+      <!-- ESPACIO PARA MOSTRAR INFO DEL FORMULARIO -->
+      <div class="modal-info">
+        <div class="info"></div>
+      </div>
     
     <script src="./app.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
